@@ -1,0 +1,261 @@
+/* src/App.css */
+:root {
+  --main-bg: #1a0a0a;       /* Màu nền chính - Đen ánh đỏ */
+  --header-bg: #0f0505;     /* Màu nền Header - Đen ánh đỏ sẫm */
+  --text-color: #e0e0e0;    /* Màu chữ trắng dịu */
+  --hover-bg: #2d1515;      /* Màu khi di chuột vào menu */
+  --header-height: 54px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* --- Khung chính --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  /* ĐÃ BỎ: border bao quanh */
+}
+
+/* --- Header --- */
+.header {
+  height: var(--header-height);
+  background-color: var(--header-bg); /* Dùng màu nền để phân biệt */
+  display: flex;
+  align-items: center;
+  padding: 0;
+  /* ĐÃ BỎ: border-bottom trắng */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Tạo bóng nhẹ ngăn cách header */
+  z-index: 10;
+}
+
+.header-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #bbb;
+  transition: background-color 0.2s, color 0.2s;
+  /* ĐÃ BỎ: border-right */
+}
+
+.header-item:hover {
+  background-color: var(--hover-bg);
+  color: #fff;
+}
+
+.header-logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #c1212a; /* Màu Forex - Đen ánh đỏ */
+  padding: 0 15px;
+  margin-right: 10px;
+}
+
+.header-logo::after {
+  content: 'App';
+  color: #fff; /* Màu App - Trắng */
+  margin-left: 2px;
+}
+
+.header-search {
+  flex-grow: 1;
+  justify-content: center;
+  color: #666; /* Chữ placeholder tối hơn chút */
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 40px 0 15px;
+  border: 1px solid #3d1515;
+  border-radius: 50px;
+  background-color: #1a0a0a;
+  color: #e0e0e0;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-input:focus {
+  border-color: #c1212a;
+  background-color: #2d1515;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  color: #999;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.notification-icon {
+  width: 20px;
+  height: 20px;
+  color: #999;
+}
+
+.header-auth {
+  margin-left: auto; /* Đẩy nút đăng nhập về sát phải nếu cần */
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.auth-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid #c1212a;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auth-box:hover {
+  background-color: rgba(193, 33, 42, 0.1);
+}
+
+.auth-register {
+  color: #c1212a; /* Đen ánh đỏ formula */
+  font-weight: 600;
+}
+
+.auth-separator {
+  color: #999;
+  margin: 0 6px;
+}
+
+.auth-login {
+  color: #ffffff; /* Trắng */
+  font-weight: 600;
+}
+
+/* --- Phần nội dung chính --- */
+.main-content {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  width: 100%;
+}
+
+/* Cột Trái */
+.left-column {
+  width: 75%; /* Tăng rộng hơn chút cho biểu đồ */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg);
+  /* ĐÃ BỎ: border-right */
+}
+
+.chart-section {
+  flex: 3; /* Chiếm 3/4 không gian cột trái */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* ĐÃ BỎ: border-bottom */
+}
+
+.bottom-section {
+  flex: 1; /* Chiếm 1/4 không gian cột trái */
+  background-color: #0f0505; /* Màu nền đen ánh đỏ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cột Phải (Bảng giá) */
+.right-column {
+  width: 25%;
+  background-color: #0f0505; /* Đen ánh đỏ sẫm */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -1px 0 5px rgba(0,0,0,0.3); /* Bóng nhẹ ngăn cách cột trái phải */
+}
+
+/* src/App.css - Thêm vào cuối file */
+
+/* --- Dropdown Menu Styles --- */
+
+/* 1. Class này gán cho mục "Công cụ" để làm điểm tựa */
+.header-item.has-dropdown {
+  position: relative; 
+  overflow: visible; /* Cho phép nội dung tràn ra ngoài để hiện menu con */
+}
+
+/* 2. Menu con (Mặc định là ẩn) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Nằm ngay bên dưới thanh Header */
+  left: 0;
+  background-color: #1a1a1a; /* Cùng màu nền Header */
+  min-width: 220px; /* Độ rộng của menu */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Đổ bóng cho đẹp */
+  border: 1px solid #333; /* Viền mỏng */
+  z-index: 100; /* Nổi lên trên cùng, che các thành phần khác */
+}
+
+/* 3. Khi di chuột vào thẻ cha thì hiện menu con */
+.header-item.has-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* 4. Các mục bên trong menu con */
+.dropdown-item {
+  padding: 12px 15px;
+  color: #ccc;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left; /* Canh lề trái */
+  font-size: 14px;
+}
+
+/* Bỏ viền mục cuối cùng */
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* Hiệu ứng khi di chuột vào từng mục con */
+.dropdown-item:hover {
+  background-color: #333;
+  color: #fff;
+}
