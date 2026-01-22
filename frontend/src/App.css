@@ -226,10 +226,10 @@ body {
   position: absolute;
   top: 100%; /* Nằm ngay bên dưới thanh Header */
   left: 0;
-  background-color: #1a1a1a; /* Cùng màu nền Header */
+  background-color: #0f0505; /* Màu đen ánh đỏ - nền sẫm */
   min-width: 220px; /* Độ rộng của menu */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Đổ bóng cho đẹp */
-  border: 1px solid #333; /* Viền mỏng */
+  box-shadow: 0 4px 12px rgba(193, 33, 42, 0.3); /* Đổ bóng tông đỏ */
+  border: 1px solid #3d1515; /* Viền tông đỏ */
   z-index: 100; /* Nổi lên trên cùng, che các thành phần khác */
 }
 
@@ -241,8 +241,8 @@ body {
 /* 4. Các mục bên trong menu con */
 .dropdown-item {
   padding: 12px 15px;
-  color: #ccc;
-  border-bottom: 1px solid #333;
+  color: #bbb;
+  border-bottom: 1px solid #3d1515;
   cursor: pointer;
   transition: background 0.2s;
   text-align: left; /* Canh lề trái */
@@ -256,6 +256,6 @@ body {
 
 /* Hiệu ứng khi di chuột vào từng mục con */
 .dropdown-item:hover {
-  background-color: #333;
+  background-color: #2d1515;
   color: #fff;
 }
